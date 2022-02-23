@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- bean definitions here -->
+
+    <!-- Context definition -->
+    <context:annotation-config />
+    <context:property-placeholder location="classpath:artisans.properties" />
+    <context:component-scan base-package="com.springcore" />
+
+    <bean id="menuisier" class="com.springcore.entity.Menuisier">
+        <property name="nom" value="${menuisier.nom}" />
+        <property name="prenom" value="${menuisier.prenom}" />
+        <property name="age" value="${menuisier.age}" />
+        <property name="liberale" value="${menuisier.liberale}" />
+    </bean>
+
+    <bean id="metallurgiste" class="com.springcore.entity.Metallurgiste">
+        <property name="nom" value="poitier" />
+        <property name="prenom" value="robert" />
+        <property name="age" value="20" />
+        <property name="liberale" value="true" />
+    </bean>
+
+</beans>
